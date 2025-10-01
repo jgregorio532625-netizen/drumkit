@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realistic Web Drum Kit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1> Realistic Web Drum Kit </h1>
+
+    <div class="kit-container">
+        
+        <div class="drum-pad crash-pad" data-key="K">
+            <img src="img/crash.png" alt="Crash" class="drum-img">
+            <span class="key-text">K (Crash)</span>
+        </div>
+        <div class="drum-pad ride-pad" data-key="J">
+            <img src="img/crash.png" alt="Ride Cymbal" class="drum-img"> 
+            <span class="key-text">J (Ride)</span>
+        </div>
+        <div class="drum-pad hihat-close-pad" data-key="L">
+            <img src="img/hihat.png" alt="Close Hi-Hat" class="drum-img">
+            <span class="key-text">L (Cls HH)</span>
+        </div>
+        <div class="drum-pad hihat-open-pad" data-key="P">
+            <img src="img/hihat.png" alt="Open Hi-Hat" class="drum-img"> 
+            <span class="key-text">P (Op HH)</span>
+        </div>
+
+        <div class="drum-pad tom-pad-1" data-key="A">
+            <img src="img/tom.png" alt="Tom 1" class="drum-img">
+            <span class="key-text">A (Tom 1)</span>
+        </div>
+        <div class="drum-pad tom-pad-2" data-key="W">
+            <img src="img/tom.png" alt="Tom 2" class="drum-img">
+            <span class="key-text">W (Tom 2)</span>
+        </div>
+        <div class="drum-pad tom-pad-3" data-key="E">
+            <img src="img/tom.png" alt="Tom 3" class="drum-img">
+            <span class="key-text">E (Tom 3)</span>
+        </div>
+        <div class="drum-pad tom-pad-4" data-key="D">
+            <img src="img/tom.png" alt="Tom 4" class="drum-img">
+            <span class="key-text">D (Tom 4)</span>
+        </div>
+
+        <div class="drum-pad snare-pad" data-key="S">
+            <img src="img/snare.png" alt="Snare" class="drum-img">
+            <span class="key-text">S (Snare)</span>
+        </div>
+        <div class="drum-pad kick-pad" data-key=" ">
+            <img src="img/bass.png" alt="Kick Drum" class="drum-img">
+            <span class="key-text">SPACE (Kick)</span>
+        </div>
+
+    </div>
+
+    <audio data-key="S" src="sounds/snare.mp3"></audio>
+    <audio data-key=" " src="sounds/bass.mp3"></audio>
+    <audio data-key="A" src="sounds/tom1.mp3"></audio>
+    <audio data-key="W" src="sounds/tom2.mp3"></audio>
+    <audio data-key="E" src="sounds/tom3.mp3"></audio>
+    <audio data-key="D" src="sounds/tom4.mp3"></audio>
+    <audio data-key="K" src="sounds/crash.mp3"></audio>
+    <audio data-key="L" src="sounds/hihat-closed.mp3"></audio>
+    <audio data-key="P" src="sounds/hihat-open.mp3"></audio>
+    <audio data-key="J" src="sounds/ride.mp3"></audio>          
+
+    <script src="script.js"></script>
+</body>
+</html>

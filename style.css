@@ -1,0 +1,207 @@
+body {
+    background-color: #333;
+    color: #fff;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+h1 {
+    margin-bottom: 40px;
+    text-shadow: 2px 2px #000;
+}
+
+:root {
+
+    --base-tom-size: 200px;
+    --snare-size: 180px;
+    --ride-size: 250px;
+    --crash-size: 180px;
+    --hihat-size: 110px;
+    --kick-size: 350px;
+
+    --crash-k-top: 5px;
+    --crash-k-left: 430px; 
+    
+    --hihat-l-top: 80px;
+    --hihat-l-left: 120px;
+    
+    --hihat-p-top: 220px;
+    --hihat-p-left: 90px; 
+    
+    --ride-j-top: 240px;
+    --ride-j-left: 600px;
+
+    --tom-a-top: 150px;
+    --tom-a-left: 180px;
+    
+    --tom-w-top: 130px;
+    --tom-w-left: 320px;
+    
+    --tom-e-top: 160px;
+    --tom-e-left: 460px;
+    
+    --tom-d-top: 340px; 
+    --tom-d-left: 450px;
+    
+    
+    --snare-s-top: 310px;
+    --snare-s-left: 330px; 
+    
+    --kick-space-top: 300px;
+    --kick-space-left: 100px; 
+}
+.cymbals-row, .toms-row, .bottom-row {
+    display: none;
+}
+
+.kit-container {
+    position: relative; 
+    width: 900px; 
+    height: 700px; 
+    max-width: 95%;
+    margin: 0 auto;
+    padding-top: 0;
+}
+
+
+.drum-pad {
+    position: absolute;
+    cursor: pointer;
+    transition: transform 0.1s ease-out;
+    background: transparent;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 120px; 
+    height: 120px;
+    border: 5px solid transparent; 
+}
+
+.drum-img {
+    width: 100%; 
+    height: 100%;
+    border-radius: 50%; 
+    object-fit: cover;
+    border: 5px solid transparent;
+}
+
+.key-text {
+    position: absolute;
+    bottom: 100px;
+    font-size: 0.85em;
+    font-weight: bold;
+    color: #ccc;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 3px 6px;
+    border-radius: 5px;
+    white-space: nowrap;
+    z-index: 100; 
+}
+.playing {
+    transform: scale(1.1);
+}
+.kick-pad {
+    width: var(--kick-size); 
+    height: var(--kick-size);
+    top: var(--kick-space-top);
+    left: var(--kick-space-left);
+    z-index: 10;
+}
+
+.snare-pad {
+    width: var(--snare-size); 
+    height: var(--snare-size);
+    top: var(--snare-s-top);
+    left: var(--snare-s-left);
+    z-index: 30;
+}
+
+.tom-pad-1, .tom-pad-2, .tom-pad-3, .tom-pad-4 {
+    width: var(--base-tom-size);
+    height: var(--base-tom-size);
+    z-index: 20;
+}
+.tom-pad-1 { top: var(--tom-a-top); left: var(--tom-a-left); }
+.tom-pad-2 { top: var(--tom-w-top); left: var(--tom-w-left); }
+.tom-pad-3 { top: var(--tom-e-top); left: var(--tom-e-left); }
+.tom-pad-4 { 
+    top: var(--tom-d-top); 
+    left: var(--tom-d-left); 
+    width: 200px;
+    height: 200px;
+}
+
+.crash-pad {
+    width: var(--crash-size); 
+    height: var(--crash-size);
+    top: var(--crash-k-top);
+    left: var(--crash-k-left);
+    z-index: 50; 
+}
+.hihat-close-pad {
+    width: var(--hihat-size);
+    height: var(--hihat-size);
+    top: var(--hihat-l-top);
+    left: var(--hihat-l-left);
+    z-index: 60; 
+}
+.hihat-open-pad {
+    width: var(--hihat-size);
+    height: var(--hihat-size);
+    top: var(--hihat-p-top);
+    left: var(--hihat-p-left);
+    z-index: 60;
+}
+.ride-pad {
+    width: var(--ride-size); 
+    height: var(--ride-size);
+    top: var(--ride-j-top);
+    left: var(--ride-j-left);
+    z-index: 50;
+}
+
+
+@media (max-width: 768px) {
+    .kit-container {
+        position: static; 
+        height: auto;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    .drum-pad {
+        position: static; 
+        transform: none !important;
+        margin: 0;
+        width: 80px;
+        height: 80px;
+        padding: 5px;
+        z-index: auto;
+    }
+    
+    .tom-pad-4, .snare-pad { width: 90px; height: 90px; }
+    .kick-pad { width: 120px; height: 120px; }
+    .ride-pad { width: 100px; height: 100px; }
+    .key-text { bottom: -20px; font-size: 0.7em; }
+
+}
+
+
+@media (max-height: 500px) and (orientation: landscape) {
+   
+    .kit-container {
+        flex-direction: row; 
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-end;
+    }
+}
